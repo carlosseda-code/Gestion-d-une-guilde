@@ -5,12 +5,12 @@ Une fois installé.e, vous vous rendez au GPU afin de commencer votre première 
 
 # Les instructions
 1. buy-hero
-  - Format de l'instruction:
-    a. Nom du héro {string}
-    b. Catégorie (common=0, uncommon=1, rare=2, epic=3, legendary=4) {int}
-    c. Coût en argent {double}
-    d. Coût en armures {int}
-    e. Points de vie {double}
+   - Format de l'instruction:
+     a. Nom du héro {string}
+     b. Catégorie (common=0, uncommon=1, rare=2, epic=3, legendary=4) {int}
+     c. Coût en argent {double}
+     d. Coût en armures {int}
+     e. Points de vie {double}
 
 2. buy-armure
   - Format de l'instruction:
