@@ -1,11 +1,40 @@
 public class Main {
-    public static void main(String args[]) {
-        System.out.println("*-------------------------------*");
-        System.out.println("Welcome to the Management of the guild");
-        System.out.println("*-------------------------------*");
-        // stuff to do some changessss 
-        System.out.println("*-------------------------------*");
-        System.out.println("Thank you for using the system!");
-        System.out.println("*-------------------------------*");
+    /**
+     * Args: array with
+     * <ol>
+     *     <li>guild:&lt;montant initial&gt;,&lt;armures initiales&gt;</li>
+     * </ol>
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        GuildCommandSystem guildCommandSystem = new GuildCommandSystem(args);
+
+        Guilde maGuilde = makeGuilde(guildCommandSystem.nextCommand());
+
+        while (guildCommandSystem.hasNextCommand()) {
+            GuildCommand command = guildCommandSystem.nextCommand();
+            switch (command.getName()) {
+                case "buy-hero" -> {
+                    // TODO
+                }
+                case "buy-armor" ->{
+                    // TODO
+                }
+                case "do-quest" -> {
+                    // TODO
+                }
+                case "train-hero" -> {
+                    // TODO
+                }
+            }
+        }
     }
- }
+
+
+    public static Guilde makeGuilde(GuildCommand command) {
+        int montantInitial = command.nextInt();
+        int nbArmures = command.nextInt();
+        return new Guilde(montantInitial, nbArmures);
+    }
+}
