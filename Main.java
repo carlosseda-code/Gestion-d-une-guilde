@@ -3,7 +3,7 @@ public class Main {
         System.out.println("*-------------------------------*");
         System.out.println("Welcome to the Management of the guild");
         System.out.println("*-------------------------------*");
-        // stuff to do
+        // stuff to do some changessss 
         System.out.println("*-------------------------------*");
         System.out.println("Thank you for using the system!");
         System.out.println("*-------------------------------*");
