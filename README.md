@@ -14,20 +14,20 @@ Une fois installé.e, vous vous rendez au GPU afin de commencer votre première 
      - Points de vie {double}
 
 2. buy-armure
-  - Format de l'instruction:
-    a. Nombre d'armures achetées {int}
-    b. Prix par armure {int}
+   - Format de l'instruction:
+     - Nombre d'armures achetées {int}
+     - Prix par armure {int}
 
 3. do-quest
-  - Format de l'instruction:
-    a. Catégorie (common=0, uncommon=1, rare=2, epic=3, legendary=4) {int}
-    b. Coût en points de vie {double}
-    c. Récompense en argent {int}
-    d. Récompense en armures {int}
+   - Format de l'instruction:
+     - Catégorie (common=0, uncommon=1, rare=2, epic=3, legendary=4) {int}
+     - Coût en points de vie {double}
+     - Récompense en argent {int}
+     - Récompense en armures {int}
 
 4. train-hero
-  - Format de l'instruction:
-    a. Nom du héro {string}
+   - Format de l'instruction:
+     - Nom du héro {string}
     
  # Structure du programme
 Avant de commencer à programmer, il faudra mettre en place la structure de votre programme. Pour ce devoir, nous vous imposerons plus de liberté dans la structure de celui-ci. Pourquoi ? Parce qu’il est important que vous soyez en mesure d’écrire un code structuré par vous-même.
