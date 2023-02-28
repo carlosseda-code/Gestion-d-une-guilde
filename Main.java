@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Main {
     /**
      * Args: array with
@@ -23,27 +25,16 @@ public class Main {
             GuildCommand command = guildCommandSystem.nextCommand();
             switch (command.getName()) {
                 case "buy-hero" -> {
-                    // TODO
-                    // TESTING ...
-                    System.out.println(" ------ BUY HERO SECTION ---------");
-                    System.out.println("NameOfHero: " + command.nextString());
-                    System.out.println("Categorie: " + command.nextString());
-                    System.out.println("Cost in money: " + command.nextDouble());
-                    System.out.println("Cost in armor: " + command.nextString());
-                    System.out.println("Points of life: " + command.nextDouble());
+                    String nom = command.nextString();
+                    System.out.println(" ------ ACHETER HERO " + nom + "---------");
+                    maGuilde.acheterHero(nom, command.nextInt(), command.nextDouble(), command.nextInt(), command.nextDouble());
                     break;
-                    //guild:100.0,10 buy-hero:Berserker,2,52.5,6,30.5
                 }
                 case "buy-armor" ->{
-                    // TODO
-                    System.out.println(" ------ BUY ARMOR SECTION ---------");
-                    System.out.println("Amount of armor to buy: " + command.nextInt());
-                    System.out.println("Price per armor: " + command.nextInt());
+                    maGuilde.acheterArmure(command.nextInt(), command.nextInt());
                     break;
                 }
                 case "do-quest" -> {
-                    // TODO
-                    // TESTING ...
                     System.out.println(" ------ DO QUEST SECTION ---------");
                     System.out.println("Categorie: " + command.nextInt());
                     System.out.println("Cost of Points of life: " + command.nextDouble());
@@ -52,7 +43,6 @@ public class Main {
                     break;
                 }
                 case "train-hero" -> {
-                    // TODO
                     System.out.println(" ------ TRAIN HERO SECTION ---------");
                     System.out.println("Name of hero: " + command.nextString());
                     break;
@@ -64,6 +54,21 @@ public class Main {
                 }
             }
         }
+        System.out.println();
+        System.out.println("Guild Bank account: " + maGuilde.getMontant() + " & " + maGuilde.getArmures() + " armours");
+        if(maGuilde.getHeros().size() != 0){
+            System.out.println("HEROS:");
+            for(int i = 0; i < maGuilde.getHeros().size(); i++){
+                System.out.println("-" + maGuilde.getHeros().get(i).getNom() + ": level=" + maGuilde.getHeros().get(i).getCategorie() + ", HP=" + maGuilde.getHeros().get(i).getPointsDeVie());
+            }
+        }
+        if(maGuilde.getErreurs().size() != 0){
+            System.out.println("Erreurs:");
+            for(int i = 0; i < maGuilde.getErreurs().size(); i++){
+                System.out.println("-" + maGuilde.getErreurs().get(i));
+            }
+        }
+
         System.out.println();
         System.out.println("-----------------------------------------------------");
         System.out.println("----------* Merci d'être venu à la guilde *----------");
