@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76e758fb-5c29-4172-a2f6-1e5c95c7704d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CommonHero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EpicHero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LegendaryHero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RareHero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UncommonHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuildCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/GuildCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hero.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/CommonHero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
