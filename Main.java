@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Set;
 
 public class Main {
     /**
@@ -31,6 +32,7 @@ public class Main {
                     break;
                 }
                 case "buy-armor" ->{
+                    System.out.println(" --------- ACHETER ARMURE ---------");
                     maGuilde.acheterArmure(command.nextInt(), command.nextInt());
                     break;
                 }
@@ -56,10 +58,12 @@ public class Main {
         }
         System.out.println();
         System.out.println("Guild Bank account: " + maGuilde.getMontant() + " & " + maGuilde.getArmures() + " armours");
-        if(maGuilde.getHeros().size() != 0){
-            System.out.println("HEROS:");
-            for(int i = 0; i < maGuilde.getHeros().size(); i++){
-                System.out.println("-" + maGuilde.getHeros().get(i).getNom() + ": level=" + maGuilde.getHeros().get(i).getCategorie() + ", HP=" + maGuilde.getHeros().get(i).getPointsDeVie());
+        if(maGuilde.getHeros().isEmpty() == false){
+            Set<Integer> setOfKeySet = maGuilde.getHeros().keySet();
+            for(Integer key : setOfKeySet) {
+                for(Hero chaqueHero : maGuilde.getHeros().get(key)) {
+                    System.out.println("-" + chaqueHero.getNom() + ": level=" + chaqueHero.getCategorie() + ", HP=" + chaqueHero.getPointsDeVie());
+                }
             }
         }
         if(maGuilde.getErreurs().size() != 0){
