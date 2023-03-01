@@ -78,5 +78,9 @@ public class Guilde {
             erreurs.add("Il vous manque de l'argent et/ou des armures pour acheter " + nom + ".");
         }
     }
-
+/* 
+    hero: carlos-0 50
+    quest carlos-0 20
+    train-hero delete -> carlos-0 20 -> carlos-1 pointsDevie = maxHP*1.5 maxHP = maxHP*1.5
+    */
 }
