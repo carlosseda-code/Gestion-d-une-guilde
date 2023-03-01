@@ -1,4 +1,3 @@
-import java.util.List;
 import java.util.Set;
 
 public class Main {
@@ -46,7 +45,7 @@ public class Main {
                 }
                 case "train-hero" -> {
                     System.out.println(" ------ TRAIN HERO SECTION ---------");
-                    System.out.println("Name of hero: " + command.nextString());
+                    maGuilde.trainHero(command.nextString());
                     break;
                 }
                 default -> {
@@ -79,9 +78,6 @@ public class Main {
         System.out.println("-----------------------------------------------------");
         System.out.println();
     }
-
-    // guild:100.0,10 buy-hero:Berserker,2,52.5,6,30.5 buy-hero:Zorro,1,36.2,2,15.0 do-quest:2,5.3,60,3 train-hero:Zorro buy-armor:1,10 carlos-seda:10
-
 
     public static Guilde makeGuilde(GuildCommand command) {
         double montantInitial = command.nextDouble();

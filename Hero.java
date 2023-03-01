@@ -30,5 +30,13 @@ public class Hero {
     public double getMaxPV(){
         return this.maxPV;
     }
+
+    public double getCoutArgent(){
+        return this.coutArgent;
+    }
+
+    public Integer getCoutArmure(){
+        return this.coutArmure;
+    }
 }
 
