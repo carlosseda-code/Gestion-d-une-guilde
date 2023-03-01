@@ -78,9 +78,57 @@ public class Guilde {
             erreurs.add("Il vous manque de l'argent et/ou des armures pour acheter " + nom + ".");
         }
     }
-/* 
-    hero: carlos-0 50
-    quest carlos-0 20
-    train-hero delete -> carlos-0 20 -> carlos-1 pointsDevie = maxHP*1.5 maxHP = maxHP*1.5
-    */
+
+    public boolean trainHero(String name) {
+        for (int i = 0; i < heros.size(); i++) {
+            ArrayList<Hero> heroes = heros.get(i);
+            for (int j = 0; j < heroes.size(); j++) {
+                Hero hero = heroes.get(j);
+                if (hero.getNom().equals(name)) {
+                    if (hero.getCategorie() >= 4) {
+                        erreurs.add("Impossible d'entraîner le héros " + hero.getNom() + " car il est au niveau max!");
+                        return false;
+                    }
+                    double coutArgent = 20 * Math.log(hero.getCategorie() + 10);
+                    if (montant < coutArgent) {
+                        erreurs.add("Il vous manque de l'argent pour améliorer " + hero.getNom() + ".");
+                        return false;
+                    }
+                    double coutArmure = Math.log(hero.getCategorie() + 10);
+                    if (armures < coutArmure) {
+                        erreurs.add("Il vous manque des armures pour améliorer " + hero.getNom() + ".");
+                        return false;
+                    }
+
+                    heros.get(hero.getCategorie()).remove(hero);
+                    montant -= coutArgent;
+                    armures -= coutArmure;
+                    Hero nouveauHero = null;
+                    switch (hero.getCategorie() + 1) {
+                        case 0:
+                            nouveauHero = new Hero0(hero.getNom(), hero.getCoutArgent(), hero.getCoutArmure(), hero.getMaxPV() * 1.5);
+                            break;
+                        case 1:
+                            nouveauHero = new Hero1(hero.getNom(), hero.getCoutArgent(), hero.getCoutArmure(), hero.getMaxPV() * 1.5);
+                            break;
+                        case 2:
+                            nouveauHero = new Hero2(hero.getNom(), hero.getCoutArgent(), hero.getCoutArmure(), hero.getMaxPV() * 1.5);
+                            break;
+                        case 3:
+                            nouveauHero = new Hero3(hero.getNom(), hero.getCoutArgent(), hero.getCoutArmure(), hero.getMaxPV() * 1.5);
+                            break;
+                        case 4:
+                            nouveauHero = new Hero4(hero.getNom(), hero.getCoutArgent(), hero.getCoutArmure(), hero.getMaxPV() * 1.5);
+                            break;
+                        default:
+                            return false;
+                    }
+                    heros.get(nouveauHero.getCategorie()).add(nouveauHero);
+                    return true;
+                }
+            }
+        }
+        erreurs.add(name + " n'existe pas dans votre inventaire.");
+        return false;
+    }
 }
