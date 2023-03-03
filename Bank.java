@@ -1,6 +1,6 @@
 public class Bank {
-    private double argent;
-    private int armure;
+    protected double argent;
+    protected int armure;
 
     // TODO - Constructor of the class
     public Bank(double argent, int armure){
@@ -32,9 +32,7 @@ public class Bank {
         return this.argent;
     }
 
-    public int getArmure(){
-        return this.armure;
-    }
+    public int getArmure(){ return this.armure; }
 
     public boolean assezArgent(int montant){
         return this.argent >= montant;

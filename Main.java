@@ -15,10 +15,10 @@ public class Main {
         Guilde maGuilde = makeGuilde(guildCommandSystem.actualCommand());
 
         System.out.println();
-        System.out.println("----------* Bienvenue dans la guilde *----------");
-        System.out.println("Votre argent de départ est le suivant : " + maGuilde.getMontant());
-        System.out.println("Vos armures de départ sont les suivantes: " + maGuilde.getArmures());
-        System.out.println("------------------------------------------------");
+        System.out.println("------------* Bienvenue dans la guilde *-------------");
+        System.out.println("Votre argent de départ est le suivant : " + maGuilde.getArgent());
+        System.out.println("Vos armures de départ sont les suivantes: " + maGuilde.getArmure());
+        System.out.println("-----------------------------------------------------");
         System.out.println();
 
         while (guildCommandSystem.hasNextCommand()) {
@@ -26,42 +26,47 @@ public class Main {
             switch (command.getName()) {
                 case "buy-hero" -> {
                     String nom = command.nextString();
-                    System.out.println(" ------ ACHETER HERO " + nom + "---------");
+                    System.out.println(" ---------- ACHETER HERO " + nom + " ----------");
                     maGuilde.acheterHero(nom, command.nextInt(), command.nextDouble(), command.nextInt(), command.nextDouble());
                     break;
                 }
                 case "buy-armor" ->{
-                    System.out.println(" --------- ACHETER ARMURE ---------");
+                    System.out.println(" ----------- ACHETER ARMURE -----------");
                     maGuilde.acheterArmure(command.nextInt(), command.nextInt());
                     break;
                 }
                 case "do-quest" -> {
-                    System.out.println(" ------ DO QUEST SECTION ---------");
-                    System.out.println("Categorie: " + command.nextInt());
-                    System.out.println("Cost of Points of life: " + command.nextDouble());
-                    System.out.println("Reward in money: " + command.nextInt());
-                    System.out.println("Reward in armor: " + command.nextInt());
+                    int niveauQuete = command.nextInt();
+                    System.out.println(" ------------ QUETE DE NIVEAU " + niveauQuete + " ------------");
+                    // System.out.println("Categorie: " + command.nextInt());
+                    // System.out.println("Cost of Points of life: " + command.nextDouble());
+                    // System.out.println("Reward in money: " + command.nextInt());
+                    // System.out.println("Reward in armor: " + command.nextInt());
+                    maGuilde.accomplirQuete(niveauQuete, command.nextDouble(), command.nextInt(), command.nextInt());
                     break;
                 }
                 case "train-hero" -> {
-                    System.out.println(" ------ TRAIN HERO SECTION ---------");
+                    System.out.println(" ----------- ENTRAINER HERO -----------");
                     maGuilde.trainHero(command.nextString());
                     break;
                 }
                 default -> {
-                    System.out.println(" ------ NOT VALID SECTION ---------");
+                    System.out.println(" --------- SECTION NON VALIDE ---------");
                     System.out.println("Commande non valide: " + command.getName());
                     break;
                 }
             }
         }
         System.out.println();
-        System.out.println("Guild Bank account: " + maGuilde.getMontant() + " & " + maGuilde.getArmures() + " armours");
+        System.out.println("--------------------*--*--*--*--*--------------------");
+        System.out.println("Guild Bank account: " + maGuilde.getArgent() + " ors & " + maGuilde.getArmure() + " armures");
         if(maGuilde.getHeros().isEmpty() == false){
+            System.out.println("Heros: ");
             Set<Integer> setOfKeySet = maGuilde.getHeros().keySet();
             for(Integer key : setOfKeySet) {
                 for(Hero chaqueHero : maGuilde.getHeros().get(key)) {
-                    System.out.println("-" + chaqueHero.getNom() + ": level=" + chaqueHero.getCategorie() + ", HP=" + chaqueHero.getPointsDeVie());
+                    System.out.println("-" + chaqueHero.getNom() + ": niveau = " + chaqueHero.getCategorie() +
+                                       ", PV = " + chaqueHero.getPointsDeVie());
                 }
             }
         }

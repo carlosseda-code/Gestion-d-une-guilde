@@ -14,29 +14,19 @@ public class Hero {
         this.pointsDeVie = pointsDeVie;
         this.maxPV = pointsDeVie;
     }
-
+    // Getters:
     public String getNom(){
         return this.nom;
     }
+    public int getCategorie(){ return this.categorie; }
+    public double getPointsDeVie(){ return this.pointsDeVie; }
+    public double getMaxPV(){ return this.maxPV; }
+    public double getCoutArgent(){ return this.coutArgent; }
+    public int getCoutArmure(){ return this.coutArmure; }
 
-    public Integer getCategorie(){
-        return this.categorie;
-    }
-
-    public Double getPointsDeVie(){
-        return this.pointsDeVie;
-    }
-
-    public double getMaxPV(){
-        return this.maxPV;
-    }
-
-    public double getCoutArgent(){
-        return this.coutArgent;
-    }
-
-    public Integer getCoutArmure(){
-        return this.coutArmure;
+    // Setters:
+    public void setPointsDeVie(double pointsDeVie) {
+        this.pointsDeVie = pointsDeVie;
     }
 }
 
