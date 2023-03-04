@@ -6,15 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="76e758fb-5c29-4172-a2f6-1e5c95c7704d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/Bank.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guilde.class" beforeDir="false" afterPath="$PROJECT_DIR$/Guilde.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Guilde.java" beforeDir="false" afterPath="$PROJECT_DIR$/Guilde.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hero.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hero.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gestion-d-une-guilde/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gestion-d-une-guilde/Bank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gestion-d-une-guilde/Guilde.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gestion-d-une-guilde/Guilde.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gestion-d-une-guilde/Hero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gestion-d-une-guilde/Hero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Gestion-d-une-guilde/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Gestion-d-une-guilde/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

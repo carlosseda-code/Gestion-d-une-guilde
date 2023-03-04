@@ -26,7 +26,10 @@ public class Hero {
     public int getCoutArmure(){ return this.coutArmure; }
 
     // Setters:
-    public void setPointsDeVie(double pointsDeVie) {
-        this.pointsDeVie = pointsDeVie;
-    }
+    public void setPointsDeVie(double pointsDeVie) { this.pointsDeVie = pointsDeVie; }
+    public void setNom(String nom) { this.nom = nom; }
+    public void setCategorie(int categorie) { this.categorie = categorie; }
+    public void setCoutArgent(double coutArgent) { this.coutArgent = coutArgent; }
+    public void setCoutArmure(int coutArmure) { this.coutArmure = coutArmure; }
+    public void setMaxPV(double maxPV) { this.maxPV = maxPV; }
 }

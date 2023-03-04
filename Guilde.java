@@ -24,24 +24,11 @@ public class Guilde extends Bank implements Quete{
         return erreurs;
     }
 
-    // Methode qui prend en valeur un heros, puis supprime cet heros de la liste de heros
-    public boolean supprimerHero(Hero hero){
-        for (ArrayList<Hero> herosCategorie : heros.values()) {
-            for (Hero chaqueHero : herosCategorie) {
-                if (chaqueHero.equals(hero)) {
-                    herosCategorie.remove(hero);
-                    return true;
-                }
-            }
-        }
-        return false;
-    } 
-
     // Methode qui gere l'achat d'armures selon l'argent du guilde
     public void acheterArmure(int nombre, int prix) {
         if (prix * nombre <= argent) {
-            this.armure += nombre;
-            this.argent -= prix * nombre;
+            ajouterArmure(nombre);
+            retirerArgent(prix * nombre);
             System.out.println(nombre + " armures achetees avec succes");
         }
         else{
@@ -53,7 +40,7 @@ public class Guilde extends Bank implements Quete{
     // Methode qui determine si la guilde a l'argent et l'armure necessaire pour acheter un heros, si oui, l'heros est
     // ajoute a la liste de heros
     public void acheterHero(String nom, int categorie, double coutArgent, int coutArmure, double pointsDeVie) {
-        if (coutArgent <= this.argent && coutArmure <= this.armure) {
+        if (coutArgent <= getArgent() && coutArmure <= getArmure()) {
             Hero hero = null;
             // Utilisation d'un switch case au lieu de plusieurs if, else
             // Source: (https://www.w3schools.com/java/java_switch.asp)
@@ -64,8 +51,8 @@ public class Guilde extends Bank implements Quete{
                 case 3 -> hero = new Hero3(nom, coutArgent, coutArmure, pointsDeVie);
                 case 4 -> hero = new Hero4(nom, coutArgent, coutArmure, pointsDeVie);
             }
-            this.argent -= coutArgent;
-            this.armure -= coutArmure;
+            retirerArgent(coutArgent);
+            retirerArmure(coutArmure);
             System.out.println("Categorie: " + categorie);
             System.out.println("Cout d'argent: " + coutArgent);
             System.out.println("Cout d'armures: " + coutArmure);
@@ -110,8 +97,8 @@ public class Guilde extends Bank implements Quete{
 
                     // supprimer le heros de niveau (i) et creer un nouveau heros de niveau (i + 1)
                     heros.get(hero.getCategorie()).remove(hero);
-                    argent -= coutArgent;
-                    armure -= coutArmure;
+                    retirerArgent(coutArgent);
+                    retirerArmure(coutArmure);
                     Hero nouveauHero;
                     switch (hero.getCategorie() + 1) {    // Source: (https://www.w3schools.com/java/java_switch.asp)
                         case 1:
@@ -211,10 +198,10 @@ public class Guilde extends Bank implements Quete{
             System.out.println("-> " + nom + " a survecu avec " + String.format("%.1f", pvRestant) + " PV restants");
             System.out.println("*** QUETE REUSSIE ***");
             System.out.println("+" + argentGagne + " ors, +" + armureGagne + " armures" );
-            this.argent += argentGagne;
-            this.armure += armureGagne;
-            System.out.println("Inventaire: " + String.format("%.1f", this.argent) + " ors, " +
-                                this.armure + " armures");
+            ajouterArgent(argentGagne);
+            ajouterArmure(armureGagne);
+            System.out.println("Inventaire: " + String.format("%.1f", getArgent()) + " ors, " +
+                                getArmure() + " armures");
         }
     }
 }
