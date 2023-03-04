@@ -5,21 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76e758fb-5c29-4172-a2f6-1e5c95c7704d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/Bank.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GuildCommandSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/GuildCommandSystem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Guilde.class" beforeDir="false" afterPath="$PROJECT_DIR$/Guilde.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Guilde.java" beforeDir="false" afterPath="$PROJECT_DIR$/Guilde.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hero.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hero.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hero0.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hero0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hero1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hero1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hero2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hero2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hero3.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hero3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quete.java" beforeDir="false" afterPath="$PROJECT_DIR$/Quete.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,5 +48,16 @@
       <updated>1676316677805</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

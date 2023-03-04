@@ -6,6 +6,7 @@ public class Hero {
     private double pointsDeVie;
     private double maxPV;
 
+    // Constructeur de la classe:
     public Hero(String nom, int categorie, double coutArgent, int coutArmure, double pointsDeVie) {
         this.nom = nom;
         this.categorie = categorie;

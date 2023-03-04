@@ -14,20 +14,19 @@ public class Main {
 
         Guilde maGuilde = makeGuilde(guildCommandSystem.actualCommand());
 
-        System.out.println();
-        System.out.println("------------* Bienvenue dans la guilde *-------------");
-        System.out.println("Votre argent de départ est le suivant : " + maGuilde.getArgent());
-        System.out.println("Vos armures de départ sont les suivantes: " + maGuilde.getArmure());
-        System.out.println("-----------------------------------------------------");
-        System.out.println();
+        System.out.println("\n------------* Bienvenue dans la guilde *-------------");
+        System.out.println("Votre argent de depart est le suivant : " + maGuilde.getArgent());
+        System.out.println("Vos armures de depart sont les suivantes: " + maGuilde.getArmure());
+        System.out.println("-----------------------------------------------------\n");
 
         while (guildCommandSystem.hasNextCommand()) {
             GuildCommand command = guildCommandSystem.nextCommand();
             switch (command.getName()) {
                 case "buy-hero" -> {
                     String nom = command.nextString();
-                    System.out.println(" ---------- ACHETER HERO " + nom + " ----------");
-                    maGuilde.acheterHero(nom, command.nextInt(), command.nextDouble(), command.nextInt(), command.nextDouble());
+                    System.out.println(" ----------- ACHETER HERO " + nom + " -----------");
+                    maGuilde.acheterHero(nom, command.nextInt(), command.nextDouble(),
+                                         command.nextInt(), command.nextDouble());
                     break;
                 }
                 case "buy-armor" ->{
@@ -37,39 +36,51 @@ public class Main {
                 }
                 case "do-quest" -> {
                     int niveauQuete = command.nextInt();
-                    System.out.println(" ------------ QUETE DE NIVEAU " + niveauQuete + " ------------");
-                    // System.out.println("Categorie: " + command.nextInt());
-                    // System.out.println("Cost of Points of life: " + command.nextDouble());
-                    // System.out.println("Reward in money: " + command.nextInt());
-                    // System.out.println("Reward in armor: " + command.nextInt());
+                    System.out.println(" ----------- QUETE DE NIVEAU " + niveauQuete + " -----------");
                     maGuilde.accomplirQuete(niveauQuete, command.nextDouble(), command.nextInt(), command.nextInt());
                     break;
                 }
                 case "train-hero" -> {
                     System.out.println(" ----------- ENTRAINER HERO -----------");
-                    maGuilde.trainHero(command.nextString());
+                    maGuilde.entrainerHero(command.nextString());
                     break;
                 }
                 default -> {
-                    System.out.println(" --------- SECTION NON VALIDE ---------");
+                    // Source: (https://www.w3schools.com/java/java_switch.asp)
+                    System.out.println(" ----------- SECTION NON VALIDE -----------");
                     System.out.println("Commande non valide: " + command.getName());
                     break;
                 }
             }
         }
-        System.out.println();
-        System.out.println("--------------------*--*--*--*--*--------------------");
-        System.out.println("Guild Bank account: " + maGuilde.getArgent() + " ors & " + maGuilde.getArmure() + " armures");
+
+        //------------------------------------------------------------------------------------------------------------//
+
+        // Contenu genere apres la derniere commande:
+
+        System.out.println("\n--------------------*--*--*--*--*--------------------");
+        // Le code "String.format("%.1f", xxxxxxxx)" permet de conserver un seul decimal lors de l'impression. Il est
+        // necessaire dans le cas ou il y a eu un calcul entre deux "double" (imprecision des nombres a virgule)
+        // Source du code: https://www.javatpoint.com/how-to-round-double-and-float-up-to-two-decimal-places-in-java
+        System.out.println("Guild Bank account: " + String.format("%.1f", maGuilde.getArgent()) + " ors & " +
+                            maGuilde.getArmure() + " armures");
+
+        // Affichage des heros survivant:
         if(maGuilde.getHeros().isEmpty() == false){
             System.out.println("Heros: ");
+            // Source concernant les cles et le HashMap: https://www.geeksforgeeks.org/hashmap-keyset-method-in-java/
+            // Obtenir les cles du HashMap contenant les listes de heros:
             Set<Integer> setOfKeySet = maGuilde.getHeros().keySet();
+            // Pour chaque cle dans le "set" de cles, obtenir la liste de heros puis afficher tout les heros de la liste
             for(Integer key : setOfKeySet) {
                 for(Hero chaqueHero : maGuilde.getHeros().get(key)) {
                     System.out.println("-" + chaqueHero.getNom() + ": niveau = " + chaqueHero.getCategorie() +
-                                       ", PV = " + chaqueHero.getPointsDeVie());
+                                       ", PV = " + String.format("%.1f", chaqueHero.getPointsDeVie()));
                 }
             }
         }
+
+        // Affichage des erreurs rencontrees:
         if(maGuilde.getErreurs().size() != 0){
             System.out.println("Erreurs:");
             for(int i = 0; i < maGuilde.getErreurs().size(); i++){
@@ -77,11 +88,9 @@ public class Main {
             }
         }
 
-        System.out.println();
-        System.out.println("-----------------------------------------------------");
-        System.out.println("----------* Merci d'être venu à la guilde *----------");
-        System.out.println("-----------------------------------------------------");
-        System.out.println();
+        System.out.println("\n-----------------------------------------------------");
+        System.out.println("----------* Merci d'etre venu a la guilde *----------");
+        System.out.println("-----------------------------------------------------\n");
     }
 
     public static Guilde makeGuilde(GuildCommand command) {
