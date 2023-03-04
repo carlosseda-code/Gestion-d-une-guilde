@@ -79,7 +79,7 @@ public class Guilde extends Bank implements Quete{
     }
 
     // Methode qui ameliore (ou non) le heros recu en parametre selon l'argent et l'armure disponible de la guilde
-    public boolean entrainerHero(String nomHero) {
+    public void entrainerHero(String nomHero) {
 
         for (int i = 0; i < heros.size(); i++) {
             ArrayList<Hero> heroes = heros.get(i);                   // obtenir la liste de heros de niveau i
@@ -91,28 +91,28 @@ public class Guilde extends Bank implements Quete{
                     if (hero.getCategorie() >= 4) {
                         System.out.println("Erreur");
                         erreurs.add("Impossible d'entraîner le héros " + hero.getNom() + " car il est au niveau max!");
-                        return false;
+                        return;
                     }
 
                     double coutArgent = 20 * Math.log(hero.getCategorie() + 10);
                     if (argent < coutArgent) {
                         System.out.println("Erreur");
                         erreurs.add("Il vous manque de l'argent pour améliorer " + hero.getNom() + ".");
-                        return false;
+                        return;
                     }
 
                     double coutArmure = Math.log(hero.getCategorie() + 10);
                     if (armure < coutArmure) {
                         System.out.println("Erreur");
                         erreurs.add("Il vous manque des armures pour améliorer " + hero.getNom() + ".");
-                        return false;
+                        return;
                     }
 
                     // supprimer le heros de niveau (i) et creer un nouveau heros de niveau (i + 1)
                     heros.get(hero.getCategorie()).remove(hero);
                     argent -= coutArgent;
                     armure -= coutArmure;
-                    Hero nouveauHero = null;
+                    Hero nouveauHero;
                     switch (hero.getCategorie() + 1) {    // Source: (https://www.w3schools.com/java/java_switch.asp)
                         case 1:
                             nouveauHero = new Hero1(hero.getNom(), hero.getCoutArgent(),
@@ -131,20 +131,19 @@ public class Guilde extends Bank implements Quete{
                                                     hero.getCoutArmure(), hero.getMaxPV() * 1.5);
                             break;
                         default:
-                            return false;
+                            return;
                     }
                     heros.get(nouveauHero.getCategorie()).add(nouveauHero);
                     System.out.println("Entrainement reussi");
                     System.out.println(nomHero + ": niveau " + (nouveauHero.getCategorie()-1)
                                         + " -> " + nouveauHero.getCategorie());
-                    return true;
+                    return;
                 }
             }
         }
         // si le heros n'existe pas:
         System.out.println("Erreur");
         erreurs.add(nomHero + " n'existe pas dans votre inventaire.");
-        return false;
     }
 
     // Methode qui assigne la quete au meilleur heros (celui avec le plus grand PV) selon le niveau de la quete, puis

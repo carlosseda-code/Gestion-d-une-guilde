@@ -30,4 +30,3 @@ public class Hero {
         this.pointsDeVie = pointsDeVie;
     }
 }
-

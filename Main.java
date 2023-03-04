@@ -12,6 +12,12 @@ public class Main {
     public static void main(String[] args) {
         GuildCommandSystem guildCommandSystem = new GuildCommandSystem(args);
 
+        // Corriger l'erreur a la compilation: lorsqu'on compile, (args) est un tableau ayant 0 elements, donc un erreur
+        // survient pour le code a la ligne 21 (qui utilise l'index pour "guildCommandSystem.actualCommand()")
+        if (args.length == 0){
+            return;
+        }
+
         Guilde maGuilde = makeGuilde(guildCommandSystem.actualCommand());
 
         System.out.println("\n------------* Bienvenue dans la guilde *-------------");
@@ -27,29 +33,24 @@ public class Main {
                     System.out.println(" ----------- ACHETER HERO " + nom + " -----------");
                     maGuilde.acheterHero(nom, command.nextInt(), command.nextDouble(),
                                          command.nextInt(), command.nextDouble());
-                    break;
                 }
                 case "buy-armor" ->{
                     System.out.println(" ----------- ACHETER ARMURE -----------");
                     maGuilde.acheterArmure(command.nextInt(), command.nextInt());
-                    break;
                 }
                 case "do-quest" -> {
                     int niveauQuete = command.nextInt();
                     System.out.println(" ----------- QUETE DE NIVEAU " + niveauQuete + " -----------");
                     maGuilde.accomplirQuete(niveauQuete, command.nextDouble(), command.nextInt(), command.nextInt());
-                    break;
                 }
                 case "train-hero" -> {
                     System.out.println(" ----------- ENTRAINER HERO -----------");
                     maGuilde.entrainerHero(command.nextString());
-                    break;
                 }
                 default -> {
                     // Source: (https://www.w3schools.com/java/java_switch.asp)
                     System.out.println(" ----------- SECTION NON VALIDE -----------");
                     System.out.println("Commande non valide: " + command.getName());
-                    break;
                 }
             }
         }
