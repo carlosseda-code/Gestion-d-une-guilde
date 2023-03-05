@@ -1,46 +1,35 @@
 public class Bank {
-    private double argent;
-    private int armure;
+    protected double argent;
+    protected int armure;
 
-    // TODO - Constructor of the class
+    // Constructeur de la classe:
     public Bank(double argent, int armure){
         this.argent = argent;
         this.armure = armure;
     }
 
-    // TODO - AJOUTER DE L'ARGENT FUNCTION 
-    public void ajouterArgent(int montant){
+    // Getters:
+    public double getArgent(){ return this.argent; }
+    public int getArmure(){ return this.armure; }
+
+    // Setters:
+    public void setArgent(double argent) { this.argent = argent; }
+    public void setArmure(int armure) { this.armure = armure; }
+
+    // Methodes:
+    public void ajouterArgent(double montant){      // si montant est de type "int", il y aura un casting implicite
         this.argent += montant;
     }
-
-    // TODO - SUPRIMMER L'ARGENT FUNCTION
-    public void suprimmerArgent(int montant){
+    public void retirerArgent(double montant){      // si montant est de type "int", il y aura un casting implicite
         this.argent -= montant;
     }
-
-    // TODO - AJOUTER ARMURE FUNCTION
     public void ajouterArmure(int montant){
         this.armure += montant;
     }
-
-    // TODO - SUPRIMMER ARMURE FUNCTION
-    public void suprimmerArmure(int montant){
+    public void retirerArmure(int montant){
         this.armure -= montant;
     }
-
-    public double getArgent(){
-        return this.argent;
-    }
-
-    public int getArmure(){
-        return this.armure;
-    }
-
-    public boolean assezArgent(int montant){
-        return this.argent >= montant;
-    }
-
-    public boolean assezArmure(int armures){
-        return this.armure >= armures;
+    public void retirerArmure(double montant){
+        this.armure -= montant;
     }
 }
