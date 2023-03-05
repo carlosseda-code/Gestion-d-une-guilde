@@ -102,28 +102,23 @@ public class Guilde extends Bank implements Quete{
                     Hero nouveauHero;
                     switch (hero.getCategorie() + 1) {    // Source: (https://www.w3schools.com/java/java_switch.asp)
                         case 1:
-                            nouveauHero = new Hero1(hero.getNom(), hero.getCoutArgent(),
-                                                    hero.getCoutArmure(), hero.getMaxPV() * 1.5);
+                            nouveauHero = new Hero1(hero.getNom(), hero.getCoutArgent(), hero.getCoutArmure(), hero.getMaxPV() * 1.5);
                             break;
                         case 2:
-                            nouveauHero = new Hero2(hero.getNom(), hero.getCoutArgent(),
-                                                    hero.getCoutArmure(), hero.getMaxPV() * 1.5);
+                            nouveauHero = new Hero2(hero.getNom(), hero.getCoutArgent(), hero.getCoutArmure(), hero.getMaxPV() * 1.5);
                             break;
                         case 3:
-                            nouveauHero = new Hero3(hero.getNom(), hero.getCoutArgent(),
-                                                    hero.getCoutArmure(), hero.getMaxPV() * 1.5);
+                            nouveauHero = new Hero3(hero.getNom(), hero.getCoutArgent(), hero.getCoutArmure(), hero.getMaxPV() * 1.5);
                             break;
                         case 4:
-                            nouveauHero = new Hero4(hero.getNom(), hero.getCoutArgent(),
-                                                    hero.getCoutArmure(), hero.getMaxPV() * 1.5);
+                            nouveauHero = new Hero4(hero.getNom(), hero.getCoutArgent(), hero.getCoutArmure(), hero.getMaxPV() * 1.5);
                             break;
                         default:
                             return;
                     }
                     heros.get(nouveauHero.getCategorie()).add(nouveauHero);
                     System.out.println("Entrainement reussi");
-                    System.out.println(nomHero + ": niveau " + (nouveauHero.getCategorie()-1)
-                                        + " -> " + nouveauHero.getCategorie());
+                    System.out.println(nomHero + ": niveau " + (nouveauHero.getCategorie()-1) + " -> " + nouveauHero.getCategorie());
                     return;
                 }
             }
@@ -200,8 +195,7 @@ public class Guilde extends Bank implements Quete{
             System.out.println("+" + argentGagne + " ors, +" + armureGagne + " armures" );
             ajouterArgent(argentGagne);
             ajouterArmure(armureGagne);
-            System.out.println("Inventaire: " + String.format("%.1f", getArgent()) + " ors, " +
-                                getArmure() + " armures");
+            System.out.println("Inventaire: " + String.format("%.1f", getArgent()) + " ors, " + getArmure() + " armures");
         }
     }
 }

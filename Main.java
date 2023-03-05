@@ -31,8 +31,7 @@ public class Main {
                 case "buy-hero" -> {
                     String nom = command.nextString();
                     System.out.println(" ----------- ACHETER HERO " + nom + " -----------");
-                    maGuilde.acheterHero(nom, command.nextInt(), command.nextDouble(),
-                                         command.nextInt(), command.nextDouble());
+                    maGuilde.acheterHero(nom, command.nextInt(), command.nextDouble(), command.nextInt(), command.nextDouble());
                 }
                 case "buy-armor" ->{
                     System.out.println(" ----------- ACHETER ARMURE -----------");
@@ -63,8 +62,7 @@ public class Main {
         // Le code "String.format("%.1f", xxxxxxxx)" permet de conserver un seul decimal lors de l'impression. Il est
         // necessaire dans le cas ou il y a eu un calcul entre deux "double" (imprecision des nombres a virgule)
         // Source du code: https://www.javatpoint.com/how-to-round-double-and-float-up-to-two-decimal-places-in-java
-        System.out.println("Guild Bank account: " + String.format("%.1f", maGuilde.getArgent()) + " ors & " +
-                            maGuilde.getArmure() + " armures");
+        System.out.println("Guild Bank account: " + String.format("%.1f", maGuilde.getArgent()) + " ors & " + maGuilde.getArmure() + " armures");
 
         // Affichage des heros survivant:
         if(maGuilde.getHeros().isEmpty() == false){
